@@ -19,16 +19,13 @@
     </nav>
     <div class="conteiner">
     <div class="Conteiner-Registro">
-            <form action="" method="POST" class="formulario">
-                <div class="registo" >
-                <h2 class="Reg-h2">Registro</h2>
-                <?php 
-                    include('modelo/conexion.php');
-                    include("controlador/controlador_Registrar.php");
-                ?>
-                 <div class="input-nombre">
+        <div class="registo" >
+            <h2 class="Reg-h2">Registro</h2>
+            <?php 
+            ?>
+            <div class="input-nombre">
                 <div class="form-control">
-                    <input type="text" required="" name="Nombre">
+                    <input type="text" required="" name="Nombre" id="Nombre">
                     <label class="inp-registro">
                         <span style="transition-delay:0ms">N</span><span style="transition-delay:50ms">o</span><span style="transition-delay:100ms">m</span><span style="transition-delay:150ms">b</span><span style="transition-delay:200ms">r</span><span style="transition-delay:250ms">e</span>
                     </label>
@@ -36,7 +33,7 @@
             </div>
             <div class="input-nombre">
                 <div class="form-control">
-                    <input type="text" required name="Numero_Cuenta">
+                    <input type="text" required name="Numero_Cuenta"  id="Numero_Cuenta">
                     <label class="inp-registro">
                         <span style="transition-delay:0ms">N</span><span style="transition-delay:50ms">u</span><span style="transition-delay:100ms">m</span><span style="transition-delay:150ms">e</span><span style="transition-delay:200ms">r</span><span style="transition-delay:250ms">o</span>
                         <span style="transition-delay:270ms">D</span><span style="transition-delay:290ms">e</span>
@@ -46,7 +43,7 @@
             </div>
             <div class="input-nombre">
                 <div class="form-control">
-                    <input type="email" required name="email">
+                    <input type="email" required name="email" id="email">
                     <label class="inp-registro">
                         <span style="transition-delay:0ms">C</span><span style="transition-delay:50ms">o</span><span style="transition-delay:100ms">r</span><span style="transition-delay:150ms">e</span><span style="transition-delay:200ms">o</span>
                     </label>
@@ -54,7 +51,7 @@
             </div>
             <div class="input-nombre">
                 <div class="form-control">
-                    <input type="password" id="Contraseña" required name="Contraseña">
+                    <input type="password" required name="Contraseña" id="Contraseña">
                     <label class="inp-registro">
                         <span style="transition-delay:0ms">C</span><span style="transition-delay:50ms">o</span><span style="transition-delay:100ms">n</span><span style="transition-delay:150ms">t</span><span style="transition-delay:200ms">r</span><span style="transition-delay:250ms">a</span><span style="transition-delay:270ms">s</span><span style="transition-delay:290ms">e</span><span style="transition-delay:300ms">ñ</span><span style="transition-delay:320ms">a</span>
                     </label>
@@ -62,19 +59,17 @@
             </div>
                         <div class="input-nombre">
                 <div class="form-control">
-                    <input type="password" id="Confirmar_Contraseña" required name="Confirmar_Contraseña">
+                    <input type="password" required name="Confirmar_Contraseña" id="Confirmar_Contraseña">
                     <label class="inp-registro">
                         <span style="transition-delay:0ms">C</span><span style="transition-delay:50ms">o</span><span style="transition-delay:100ms">n</span><span style="transition-delay:150ms">f</span><span style="transition-delay:200ms">i</span><span style="transition-delay:250ms">r</span><span style="transition-delay:270ms">m</span><span style="transition-delay:290ms">a</span><span style="transition-delay:300ms">r</span>
                         <span style="transition-delay:0ms">C</span><span style="transition-delay:50ms">o</span><span style="transition-delay:100ms">n</span><span style="transition-delay:150ms">t</span><span style="transition-delay:200ms">r</span><span style="transition-delay:250ms">a</span><span style="transition-delay:270ms">s</span><span style="transition-delay:290ms">e</span><span style="transition-delay:300ms">ñ</span><span style="transition-delay:320ms">a</span>
                     </label>
                 </div>
-                <div id="mensaejeError" style="color: red;"></div>
             </div>
-                <h2 class="decorated">
-               <button class="btn" name="registro">Registrar</button>
+            <h2 class="decorated">
+               <button class="btn" value="Registrar" name="registro">Registrar</button>
             </h2>
-            </div>
-            </form>
+        </div>
     </div>
     </div>
         <footer>
@@ -102,22 +97,6 @@
             </div>
         </div>
     </footer>
-    <script>
-        document.getElementById("Confirmar_Contraseña").addEventListener("input", function(){
-            let pass = document.getElementById("Contraseña").value;
-            let confirmPass = this.value; 
-            let mensajeError = document.getElementById("mensaejeError");
-
-            if(pass !== confirmPass){
-                event.preventDefault();
-                mensajeError.textContent= "la contraseña no coincide";
-
-            }else{
-                mensajeError.textContent= "";
-            }
-        }
-    )
-    </script>
     <script>
         window.addEventListener("scroll", function () {
         const footer = document.querySelector("footer");
